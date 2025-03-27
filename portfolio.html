@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio | BigTapSecurity</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      background: linear-gradient(to bottom right, #000000, #012b19);
+      color: #00ffcc;
+      font-family: 'Poppins', sans-serif;
+    }
+    header {
+      background-color: #111;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid #00ffcc;
+    }
+    nav a {
+      color: #00ffcc;
+      margin-left: 20px;
+      text-decoration: none;
+    }
+    nav a:hover {
+      color: #fff;
+    }
+    .portfolio-section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+    .portfolio-section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .projects {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 30px;
+    }
+    .project-card {
+      background: #111;
+      border: 1px solid #00ffcc;
+      padding: 20px;
+      border-radius: 10px;
+      width: 300px;
+      transition: 0.3s ease;
+    }
+    .project-card:hover {
+      box-shadow: 0 0 20px #00ffcc;
+    }
+    .project-card h3 {
+      color: #00ffcc;
+    }
+    .project-card p {
+      color: #99ffee;
+      font-size: 0.95rem;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      color: #ccc;
+      background-color: #111;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h2>BigTapSecurity</h2>
+    <nav>
+      <a href="home.html">Home</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <section class="portfolio-section">
+    <h2>Featured Projects</h2>
+    <div class="projects">
+      <div class="project-card">
+        <h3>Phishing Email Detection Lab</h3>
+        <p>Built a phishing simulation environment to test email security protocols and human response.</p>
+      </div>
+      <div class="project-card">
+        <h3>AWS IP Logger System</h3>
+        <p>Integrated AWS Lambda and API Gateway to log IPs and monitor suspicious activity on a portfolio site.</p>
+      </div>
+      <div class="project-card">
+        <h3>Cybersecurity Toolkit</h3>
+        <p>Developed a multi-tool Python toolkit to aid red and blue team practices in ethical hacking labs.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Ramon Tapia | bigtapcybersecurity@bigtapsecurity.com</p>
+  </footer>
+</body>
+</html>
