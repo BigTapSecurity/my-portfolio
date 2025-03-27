@@ -3,36 +3,27 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Home | Ramon Tapia Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;800&display=swap" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css" />
+  <title>Home | BigTapSecurity</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: 'Poppins', sans-serif;
       background: linear-gradient(to bottom right, #000000, #012b19);
       color: #00ffcc;
+      font-family: 'Poppins', sans-serif;
     }
     header {
-      background-color: #1a1a1a;
-      padding: 1rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      padding: 1rem 2rem;
+      background-color: #111;
       border-bottom: 1px solid #00ffcc;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 1.5rem;
-      color: #fff;
     }
     nav a {
-      margin-left: 20px;
       color: #00ffcc;
+      margin-left: 20px;
       text-decoration: none;
       font-weight: 600;
     }
@@ -43,83 +34,69 @@
       text-align: center;
       padding: 100px 20px;
     }
-    .hero h2 {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
     }
     .hero p {
       font-size: 1.2rem;
       max-width: 700px;
-      margin: 0 auto 30px;
+      margin: 0 auto 2rem;
       color: #99ffee;
     }
     .hero-icons {
-      font-size: 4rem;
-      margin: 2rem 0;
-      animation: pulse 2s infinite;
+      font-size: 3rem;
+      margin: 1rem;
     }
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.1); }
-      100% { transform: scale(1); }
-    }
-    .hero-buttons button {
-      background-color: #00ffcc;
-      color: #000;
-      border: none;
-      border-radius: 6px;
-      padding: 12px 24px;
+    .buttons button {
       margin: 10px;
-      font-size: 1rem;
+      padding: 10px 25px;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      background: #00ffcc;
+      color: #000;
       cursor: pointer;
-      transition: all 0.3s ease;
+      transition: 0.3s ease;
     }
-    .hero-buttons button:hover {
-      background-color: #00ccaa;
+    .buttons button:hover {
+      background: #00ddb2;
     }
     footer {
       text-align: center;
-      background-color: #1a1a1a;
       padding: 1rem;
-      color: #999;
-      border-top: 1px solid #00ffcc;
-    }
-    footer a {
-      color: #aa88ff;
-      text-decoration: none;
+      color: #ccc;
+      background-color: #111;
     }
   </style>
 </head>
 <body>
-
   <header>
-    <h1>Ramon Tapia</h1>
+    <h2>BigTapSecurity</h2>
     <nav>
       <a href="home.html">Home</a>
       <a href="portfolio.html">Portfolio</a>
-      <a href="skills.html">Skills</a>
-      <a href="about.html">About Me</a>
+      <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
     </nav>
   </header>
 
   <section class="hero">
-    <h2>Cybersecurity Specialist | Protecting Digital Assets</h2>
-    <p>Experienced cybersecurity professional specializing in penetration testing, threat analysis, and secure system design. Dedicated to building secure systems and educating clients through practical, research-backed solutions.</p>
+    <h1>Cybersecurity Specialist | Protecting Digital Assets</h1>
+    <p>Experienced cybersecurity professional specializing in threat analysis, penetration testing, and secure system design.</p>
     <div class="hero-icons">
-      <i class="ri-shield-keyhole-line"></i>
-      <i class="ri-fingerprint-line"></i>
-      <i class="ri-terminal-window-line"></i>
+      <i class="ri-lock-line"></i>
+      <i class="ri-bug-line"></i>
+      <i class="ri-shield-user-line"></i>
     </div>
-    <div class="hero-buttons">
-      <button onclick="window.location.href='portfolio.html'">View My Projects</button>
-      <button onclick="window.location.href='about.html'">Learn More About Me</button>
+    <div class="buttons">
+      <button onclick="window.location.href='portfolio.html'">View My Work</button>
+      <button onclick="window.location.href='about.html'">Learn More</button>
     </div>
   </section>
 
   <footer>
-    <p>© 2025 Ramon Tapia | <a href="mailto:bigtapcybersecurity@bigtapsecurity.com">bigtapcybersecurity@bigtapsecurity.com</a></p>
+    <p>© 2025 Ramon Tapia | bigtapcybersecurity@bigtapsecurity.com</p>
   </footer>
-
 </body>
 </html>
