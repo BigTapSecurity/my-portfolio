@@ -53,44 +53,10 @@
     #unlock-button:hover {
       background-color: #00dd88;
     }
-    nav.dropdown {
-      position: relative;
-      display: inline-block;
-    }
-    .dropbtn {
-      background-color: #333;
-      color: white;
-      padding: 10px 16px;
-      font-size: 16px;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      background-color: #fff;
-      min-width: 160px;
-      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
-      z-index: 1;
-      border-radius: 8px;
-    }
-    .dropdown-content a {
-      color: black;
-      padding: 12px 16px;
-      text-decoration: none;
-      display: block;
-    }
-    .dropdown-content a:hover {
-      background-color: #f1f1f1;
-    }
-    .dropdown:hover .dropdown-content {
-      display: block;
-    }
   </style>
 </head>
 <body>
-  <!-- Intro Lock Screen -->
+  <!-- Lock Screen -->
   <div id="lock-screen" class="lock-screen">
     <div class="lock-container">
       <h1 class="welcome-banner">Welcome</h1>
@@ -98,7 +64,7 @@
     </div>
   </div>
 
-  <!-- Main Content (Initially Hidden) -->
+  <!-- Main Content -->
   <div id="main-site" style="display: none;">
     <header>
       <h1>Ramon Tapia</h1>
@@ -146,23 +112,27 @@
     </footer>
   </div>
 
-  <!-- Scripts -->
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <!-- IP Logging Script -->
   <script>
-    AOS.init({
-      duration: 1000,
-      once: true
+    fetch("https://469yri2lj0.execute-api.us-east-2.amazonaws.com/logVisitorIP", {
+      method: "POST"
+    })
+    .then(res => res.json())
+    .then(data => {
+      console.log("IP logged:", data);
+    })
+    .catch(err => {
+      console.error("Error logging IP:", err);
     });
   </script>
-  <script src="assets/js/script.js"></script>
+
+  <!-- JS & Unlock Logic -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script>
+    AOS.init({ duration: 1000, once: true });
+
     const typingText = document.getElementById("typing-text");
-    const phrases = [
-      "Cybersecurity Student",
-      "Red Team Explorer",
-      "Tech-Focused Veteran",
-      "Builder of Things"
-    ];
+    const phrases = ["Cybersecurity Student", "Red Team Explorer", "Tech-Focused Veteran", "Builder of Things"];
     let i = 0, j = 0, isDeleting = false;
     function type() {
       const current = phrases[i];
@@ -184,27 +154,26 @@
     }
     type();
 
-    // Unlock button behavior
+    // Unlock logic + browser back
     document.getElementById("unlock-button").addEventListener("click", () => {
-  history.pushState({ page: "main" }, "", "#main");
-  document.getElementById("lock-screen").style.display = "none";
-  document.getElementById("main-site").style.display = "block";
-});
+      history.pushState({ page: "main" }, "", "#main");
+      document.getElementById("lock-screen").style.display = "none";
+      document.getElementById("main-site").style.display = "block";
+    });
 
-// Check if previously unlocked
-window.addEventListener("DOMContentLoaded", () => {
-  if (location.hash === "#main") {
-    document.getElementById("lock-screen").style.display = "none";
-    document.getElementById("main-site").style.display = "block";
-  }
-});
+    window.addEventListener("DOMContentLoaded", () => {
+      if (location.hash === "#main") {
+        document.getElementById("lock-screen").style.display = "none";
+        document.getElementById("main-site").style.display = "block";
+      }
+    });
 
-window.addEventListener("popstate", (event) => {
-  if (!event.state || event.state.page !== "main") {
-    document.getElementById("main-site").style.display = "none";
-    document.getElementById("lock-screen").style.display = "flex";
-  }
-});
+    window.addEventListener("popstate", (event) => {
+      if (!event.state || event.state.page !== "main") {
+        document.getElementById("main-site").style.display = "none";
+        document.getElementById("lock-screen").style.display = "flex";
+      }
+    });
   </script>
 </body>
 </html>
