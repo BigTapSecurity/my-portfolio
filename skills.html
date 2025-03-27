@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Skills | Ramon Tapia</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom right, #000000, #012b19);
+      color: #00ffcc;
+    }
+    header {
+      background-color: #111;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #00ffcc;
+    }
+    nav a {
+      color: #00ffcc;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    nav a:hover {
+      color: #fff;
+    }
+    .skills-section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .skills-section h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+    }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+    }
+    .skill-card {
+      background: #111;
+      border: 1px solid #00ffcc;
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+    .skill-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px #00ffcc;
+    }
+    .skill-card i {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      color: #00ffcc;
+    }
+    .skill-card h3 {
+      margin-bottom: 10px;
+      color: #fff;
+    }
+    .skill-card p {
+      font-size: 0.9rem;
+      color: #99ffee;
+    }
+    footer {
+      text-align: center;
+      background-color: #111;
+      padding: 1rem;
+      color: #ccc;
+      border-top: 1px solid #00ffcc;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h2>BigTapSecurity</h2>
+    <nav>
+      <a href="home.html">Home</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="skills.html">Skills</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <section class="skills-section">
+    <h2>Skills & Certifications</h2>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <i class="ri-shield-keyhole-line"></i>
+        <h3>Threat Detection</h3>
+        <p>Expert in identifying and mitigating vulnerabilities in live environments using logs, threat intel, and analytics tools.</p>
+      </div>
+      <div class="skill-card">
+        <i class="ri-bug-line"></i>
+        <h3>Penetration Testing</h3>
+        <p>Conduct ethical hacking assessments using Kali Linux, Metasploit, Burp Suite, and custom tools.</p>
+      </div>
+      <div class="skill-card">
+        <i class="ri-network-chart-line"></i>
+        <h3>Network Security</h3>
+        <p>Configure firewalls, segment networks, and enforce strong security policies in both local and cloud infrastructures.</p>
+      </div>
+      <div class="skill-card">
+        <i class="ri-cpu-line"></i>
+        <h3>Incident Response</h3>
+        <p>Develop response playbooks, perform root cause analysis, and automate alerts through SIEM platforms.</p>
+      </div>
+      <div class="skill-card">
+        <i class="ri-award-line"></i>
+        <h3>Certifications</h3>
+        <p>Security+ (In Progress), Associate in Cyber Defense, B.A.T in Cybersecurity (Pursuing)</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Ramon Tapia | bigtapcybersecurity@bigtapsecurity.com</p>
+  </footer>
+</body>
+</html>
