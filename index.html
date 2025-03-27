@@ -1,179 +1,104 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ramon Tapia | Cybersecurity Portfolio</title>
-  <link rel="stylesheet" href="assets/css/style.css" />
-  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome | Ramon Tapia</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
     }
-    html, body {
-      height: 100%;
-      background: #000;
-    }
-    .lock-screen {
+    body {
+      height: 100vh;
+      background: linear-gradient(to bottom right, #000000, #012b19);
       display: flex;
       justify-content: center;
       align-items: center;
       flex-direction: column;
-      height: 100vh;
-      background: linear-gradient(160deg, #000000 60%, #013220 100%);
-      color: white;
+      color: #00ff88;
       text-align: center;
     }
-    .lock-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 30px;
-    }
-    .welcome-banner {
+    h1 {
       font-size: 3rem;
-      color: #00ff99;
-      font-weight: 600;
+      margin-bottom: 1rem;
+      text-shadow: 0 0 10px #00ff88;
     }
-    #unlock-button {
-      padding: 0.75em 1.5em;
-      background-color: #00ffaa;
+    button {
+      background-color: #00ff88;
+      color: #000;
       border: none;
-      color: black;
-      font-weight: bold;
-      font-size: 1rem;
+      padding: 15px 30px;
       border-radius: 8px;
+      font-size: 1rem;
+      font-weight: bold;
       cursor: pointer;
-      box-shadow: 0 0 20px rgba(0,255,170,0.4);
-      transition: background 0.3s;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 10px #00ff88;
     }
-    #unlock-button:hover {
-      background-color: #00dd88;
+    button:hover {
+      background-color: #00cc70;
+      box-shadow: 0 0 15px #00cc70;
     }
   </style>
 </head>
 <body>
-  <!-- Lock Screen -->
-  <div id="lock-screen" class="lock-screen">
-    <div class="lock-container">
-      <h1 class="welcome-banner">Welcome</h1>
-      <button id="unlock-button">Unlock</button>
-    </div>
-  </div>
-
-  <!-- Main Content -->
-  <div id="main-site" style="display: none;">
-    <header>
-      <h1>Ramon Tapia</h1>
-      <nav class="dropdown">
-        <button class="dropbtn">☰ Menu</button>
-        <div class="dropdown-content">
-          <a href="about.html">About</a>
-          <a href="projects.html">Projects</a>
-          <a href="experience.html">Experience</a>
-          <a href="hobbies.html">Hobbies</a>
-          <a href="contact.html">Contact</a>
-        </div>
-        <button id="theme-toggle">🌙</button>
-      </nav>
-    </header>
-
-    <main>
-      <section class="intro">
-        <h2 id="typing-text"></h2>
-        <p>I’m Ramon Tapia — a cybersecurity student, technology specialist, and military-trained analyst with years of strategic experience. I build and secure systems, research cyber trends, and support organizations through intelligent digital solutions.</p>
-        <a href="assets/resume.pdf" download class="btn">📄 Download My Resume</a>
-      </section>
-
-      <section class="projects">
-        <h2 data-aos="fade-up">Featured Projects</h2>
-        <div class="gallery">
-          <div class="card" data-aos="fade-right">
-            <h3>Cybersecurity Toolkit</h3>
-            <p>Python-based OSINT and threat analysis suite built in VS Code for Kali Linux environments.</p>
-          </div>
-          <div class="card" data-aos="fade-up">
-            <h3>Windows Server Lab</h3>
-            <p>Configured DNS zones, storage volumes, and Active Directory roles in an Azure-hosted Windows Server 2019 setup.</p>
-          </div>
-          <div class="card" data-aos="fade-left">
-            <h3>Ticketing System App</h3>
-            <p>In-progress web app (Flask + Teams API) to track IT service tickets for academic labs in real time.</p>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer>
-      <p>© 2025 Ramon Tapia | <a href="mailto:bigtapcybersecurity@bigtapsecurity.com">bigtapcybersecurity@bigtapsecurity.com</a></p>
-    </footer>
-  </div>
-
-  <!-- IP Logging Script -->
-  <script>
-    fetch("https://469yri2lj0.execute-api.us-east-2.amazonaws.com/logVisitorIP", {
-      method: "POST"
-    })
-    .then(res => res.json())
-    .then(data => {
-      console.log("IP logged:", data);
-    })
-    .catch(err => {
-      console.error("Error logging IP:", err);
-    });
-  </script>
-
-  <!-- JS & Unlock Logic -->
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script>
-    AOS.init({ duration: 1000, once: true });
-
-    const typingText = document.getElementById("typing-text");
-    const phrases = ["Cybersecurity Student", "Red Team Explorer", "Tech-Focused Veteran", "Builder of Things"];
-    let i = 0, j = 0, isDeleting = false;
-    function type() {
-      const current = phrases[i];
-      if (!isDeleting) {
-        typingText.textContent = current.substring(0, j++);
-        if (j === current.length + 1) {
-          isDeleting = true;
-          setTimeout(type, 1000);
-          return;
-        }
-      } else {
-        typingText.textContent = current.substring(0, j--);
-        if (j === 0) {
-          isDeleting = false;
-          i = (i + 1) % phrases.length;
-        }
-      }
-      setTimeout(type, 100);
+  <h1>Welcome</h1>
+  <button onclick="location.href='home.html'">Unlock</button>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome | Ramon Tapia</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
     }
-    type();
-
-    // Unlock logic + browser back
-    document.getElementById("unlock-button").addEventListener("click", () => {
-      history.pushState({ page: "main" }, "", "#main");
-      document.getElementById("lock-screen").style.display = "none";
-      document.getElementById("main-site").style.display = "block";
-    });
-
-    window.addEventListener("DOMContentLoaded", () => {
-      if (location.hash === "#main") {
-        document.getElementById("lock-screen").style.display = "none";
-        document.getElementById("main-site").style.display = "block";
-      }
-    });
-
-    window.addEventListener("popstate", (event) => {
-      if (!event.state || event.state.page !== "main") {
-        document.getElementById("main-site").style.display = "none";
-        document.getElementById("lock-screen").style.display = "flex";
-      }
-    });
-  </script>
+    body {
+      height: 100vh;
+      background: linear-gradient(to bottom right, #000000, #012b19);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      color: #00ff88;
+      text-align: center;
+    }
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      text-shadow: 0 0 10px #00ff88;
+    }
+    button {
+      background-color: #00ff88;
+      color: #000;
+      border: none;
+      padding: 15px 30px;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 10px #00ff88;
+    }
+    button:hover {
+      background-color: #00cc70;
+      box-shadow: 0 0 15px #00cc70;
+    }
+  </style>
+</head>
+<body>
+  <h1>Welcome</h1>
+  <button onclick="location.href='home.html'">Unlock</button>
 </body>
 </html>
