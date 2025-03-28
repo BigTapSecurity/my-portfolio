@@ -44,17 +44,19 @@
       }
     }
 
+    .content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+      text-align: center;
+    }
+
     .matrix-welcome {
-      display: flex;
-      justify-content: center;
-      font-size: 3rem;
+      font-size: 4.5rem;
       font-weight: bold;
       margin-bottom: 40px;
-      position: absolute;
-      top: 35%;
-      left: 50%;
-      transform: translate(-50%, -60%);
-      z-index: 1;
     }
 
     .matrix-welcome span {
@@ -96,15 +98,10 @@
       text-decoration: none;
       box-shadow: 0 0 10px #00ff88, 0 0 20px #00ff88;
       transition: transform 0.2s ease-in-out;
-      position: absolute;
-      top: 60%;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 1;
     }
 
     .enter-btn:hover {
-      transform: translateX(-50%) scale(1.05);
+      transform: scale(1.05);
       box-shadow: 0 0 20px #00ffaa;
     }
   </style>
@@ -112,11 +109,12 @@
 <body>
   <div class="matrix-bg" id="matrix-bg"></div>
 
-  <div class="matrix-welcome">
-    <span>W</span><span>e</span><span>l</span><span>c</span><span>o</span><span>m</span><span>e</span>
+  <div class="content">
+    <div class="matrix-welcome">
+      <span>W</span><span>e</span><span>l</span><span>c</span><span>o</span><span>m</span><span>e</span>
+    </div>
+    <a href="home.html" class="enter-btn">Enter</a>
   </div>
-
-  <a href="home.html" class="enter-btn">Enter</a>
 
   <!-- Binary Rain Animation -->
   <script>
