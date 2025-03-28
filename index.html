@@ -21,11 +21,12 @@
       height: 100%;
       z-index: 0;
       overflow: hidden;
+      pointer-events: none;
     }
 
     .matrix-bg span {
       position: absolute;
-      top: -10%;
+      top: -5%;
       font-size: 16px;
       color: #00ff88;
       opacity: 0.2;
@@ -34,7 +35,7 @@
 
     @keyframes fall {
       0% {
-        transform: translateY(-10%);
+        transform: translateY(-100%);
         opacity: 0.2;
       }
       100% {
@@ -119,14 +120,25 @@
     const matrixContainer = document.getElementById('matrix-bg');
     const binary = ['0', '1'];
 
-    for (let i = 0; i < 100; i++) {
+    function createBinaryChar() {
       const char = document.createElement('span');
       char.textContent = binary[Math.floor(Math.random() * binary.length)];
       char.style.left = Math.random() * 100 + 'vw';
-      char.style.animationDuration = (Math.random() * 5 + 5) + 's';
+      char.style.animationDuration = (Math.random() * 10 + 5) + 's';
       char.style.fontSize = Math.random() * 12 + 12 + 'px';
       matrixContainer.appendChild(char);
+
+      setTimeout(() => {
+        matrixContainer.removeChild(char);
+      }, 15000); // Remove after animation ends
     }
+
+    // Increase binary rain density and loop generation
+    setInterval(() => {
+      for (let i = 0; i < 10; i++) {
+        createBinaryChar();
+      }
+    }, 300);
   </script>
 </body>
 </html>
