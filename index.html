@@ -15,6 +15,34 @@
       position: relative;
     }
 
+    .matrix-bg {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .matrix-bg span {
+      position: absolute;
+      top: -10%;
+      font-size: 16px;
+      color: #00ff88;
+      opacity: 0.2;
+      animation: fall linear infinite;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(-10%);
+        opacity: 0.2;
+      }
+      100% {
+        transform: translateY(110vh);
+        opacity: 0;
+      }
+    }
+
     .matrix-welcome {
       display: flex;
       justify-content: center;
@@ -25,6 +53,7 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -60%);
+      z-index: 1;
     }
 
     .matrix-welcome span {
@@ -70,6 +99,7 @@
       top: 60%;
       left: 50%;
       transform: translateX(-50%);
+      z-index: 1;
     }
 
     .enter-btn:hover {
@@ -79,9 +109,24 @@
   </style>
 </head>
 <body>
+  <div class="matrix-bg" id="matrix-bg"></div>
   <div class="matrix-welcome">
     <span>W</span><span>e</span><span>l</span><span>c</span><span>o</span><span>m</span><span>e</span>
   </div>
   <a href="home.html" class="enter-btn">Enter</a>
+
+  <script>
+    const matrixContainer = document.getElementById('matrix-bg');
+    const binary = ['0', '1'];
+
+    for (let i = 0; i < 100; i++) {
+      const char = document.createElement('span');
+      char.textContent = binary[Math.floor(Math.random() * binary.length)];
+      char.style.left = Math.random() * 100 + 'vw';
+      char.style.animationDuration = (Math.random() * 5 + 5) + 's';
+      char.style.fontSize = Math.random() * 12 + 12 + 'px';
+      matrixContainer.appendChild(char);
+    }
+  </script>
 </body>
 </html>
