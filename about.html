@@ -2,15 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Home | BigTapSecurity</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet" />
   <style>
     body {
       margin: 0;
-      padding: 0;
+      height: 100vh;
       font-family: 'Poppins', sans-serif;
       background: radial-gradient(circle at top, #000000 0%, #012b19 100%);
+      overflow: hidden;
+      position: relative;
       color: #00ff88;
     }
 
@@ -39,28 +41,43 @@
       text-shadow: 0 0 10px #00ff88;
     }
 
-    main {
-      padding: 40px;
-      max-width: 900px;
-      margin: auto;
+    .hero {
       text-align: center;
+      padding: 100px 20px;
     }
 
-    h2 {
-      text-shadow: 0 0 5px #00ff88;
-    }
-
-    p {
-      line-height: 1.6;
-    }
-
-    a {
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
       color: #00ff88;
-      text-decoration: none;
     }
 
-    a:hover {
-      text-decoration: underline;
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto 2rem;
+      color: #99ffee;
+    }
+
+    .hero-icons {
+      font-size: 3rem;
+      margin: 1rem;
+    }
+
+    .buttons button {
+      margin: 10px;
+      padding: 10px 25px;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      background: #00ff88;
+      color: #000;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .buttons button:hover {
+      background: #00ddb2;
     }
 
     footer {
@@ -74,7 +91,7 @@
 </head>
 <body>
   <header>
-    Welcome to BigTapSecurity
+    <h2>BigTapSecurity</h2>
     <nav>
       <a href="home.html">Home</a>
       <a href="portfolio.html">Portfolio</a>
@@ -83,18 +100,22 @@
     </nav>
   </header>
 
-  <main>
-    <h2>Cybersecurity Specialist</h2>
-    <p>
-      Protecting digital assets with a blend of technical expertise and tactical insight. Explore projects, learn about our mission, or get in touch.
-    </p>
-    <p>
-      Navigate to the <a href="portfolio.html">Portfolio</a> to view major work, or go to <a href="contact.html">Contact</a> to connect.
-    </p>
-  </main>
+  <section class="hero">
+    <h1>Cybersecurity Specialist | Protecting Digital Assets</h1>
+    <p>Experienced cybersecurity professional specializing in threat analysis, penetration testing, and secure system design.</p>
+    <div class="hero-icons">
+      <i class="ri-lock-line"></i>
+      <i class="ri-bug-line"></i>
+      <i class="ri-shield-user-line"></i>
+    </div>
+    <div class="buttons">
+      <button onclick="window.location.href='portfolio.html'">View My Work</button>
+      <button onclick="window.location.href='about.html'">Learn More</button>
+    </div>
+  </section>
 
   <footer>
-    © 2025 Ramon Tapia | bigtapcybersecurity@bigtapsecurity.com
+    <p>© 2025 Ramon Tapia | bigtapcybersecurity@bigtapsecurity.com</p>
   </footer>
 </body>
 </html>
