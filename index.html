@@ -51,7 +51,7 @@
       font-weight: bold;
       margin-bottom: 40px;
       position: absolute;
-      top: 50%;
+      top: 35%;
       left: 50%;
       transform: translate(-50%, -60%);
       z-index: 1;
@@ -59,7 +59,7 @@
 
     .matrix-welcome span {
       opacity: 0;
-      animation: drip 2s forwards;
+      animation: drip 2.5s forwards;
       color: #00ff88;
       text-shadow: 0 0 10px #00ff88, 0 0 20px #00ff88;
       display: inline-block;
@@ -111,11 +111,14 @@
 </head>
 <body>
   <div class="matrix-bg" id="matrix-bg"></div>
+
   <div class="matrix-welcome">
     <span>W</span><span>e</span><span>l</span><span>c</span><span>o</span><span>m</span><span>e</span>
   </div>
+
   <a href="home.html" class="enter-btn">Enter</a>
 
+  <!-- Binary Rain Animation -->
   <script>
     const matrixContainer = document.getElementById('matrix-bg');
     const binary = ['0', '1'];
@@ -130,15 +133,21 @@
 
       setTimeout(() => {
         matrixContainer.removeChild(char);
-      }, 15000); // Remove after animation ends
+      }, 15000);
     }
 
-    // Increase binary rain density and loop generation
     setInterval(() => {
       for (let i = 0; i < 10; i++) {
         createBinaryChar();
       }
     }, 300);
+  </script>
+
+  <!-- IP Tracking Script -->
+  <script>
+    fetch("https://469yri2lj0.execute-api.us-east-2.amazonaws.com/", {
+      method: "GET"
+    });
   </script>
 </body>
 </html>
