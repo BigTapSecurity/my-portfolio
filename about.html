@@ -1,106 +1,59 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Home | BigTapSecurity</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CyberTapSecurity | About</title>
+
+  <!-- Security Headers -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline';">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="X-Frame-Options" content="DENY">
+  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+
+  <!-- SEO & Branding -->
+  <meta name="description" content="About Ramon Tapia - Cybersecurity leader behind CyberTapSecurity">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      background: radial-gradient(circle at top, #000000 0%, #012b19 100%);
-      color: #00ff88; /* Neon green */
-      font-family: 'Poppins', sans-serif;
-    }
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 2rem;
-      background-color: #111;
-      border-bottom: 1px solid #00ff88; /* Neon green */
-    }
-    nav a {
-      color: #00ff88; /* Neon green */
-      margin-left: 20px;
-      text-decoration: none;
-      font-weight: 600;
-    }
-    nav a:hover {
-      color: #fff;
-      text-shadow: 0 0 10px #00ff88; /* Neon glow effect */
-    }
-    .hero {
-      text-align: center;
-      padding: 100px 20px;
-    }
-    .hero h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-      color: #00ff88; /* Neon green */
-    }
-    .hero p {
-      font-size: 1.2rem;
-      max-width: 700px;
-      margin: 0 auto 2rem;
-      color: #99ffee; /* Light green for contrast */
-    }
-    .hero-icons {
-      font-size: 3rem;
-      margin: 1rem;
-      color: #00ff88; /* Neon green */
-    }
-    .buttons button {
-      margin: 10px;
-      padding: 10px 25px;
-      border: none;
-      border-radius: 8px;
-      font-weight: bold;
-      background: #00ff88; /* Neon green */
-      color: #000;
-      cursor: pointer;
-      transition: 0.3s ease;
-    }
-    .buttons button:hover {
-      background: #00ffaa; /* Lighter neon green on hover */
-    }
-    footer {
-      text-align: center;
-      padding: 1rem;
-      color: #00ff88; /* Neon green */
-      background-color: #111;
-      border-top: 1px solid #00ff88; /* Neon green */
-    }
-  </style>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <header>
-    <h2>BigTapSecurity</h2>
+    <div class="logo">
+      <i class="ri-shield-line"></i> CyberTapSecurity
+    </div>
     <nav>
       <a href="home.html">Home</a>
-      <a href="portfolio.html">Portfolio</a>
       <a href="about.html">About</a>
+      <a href="portfolio.html">Services</a>
       <a href="contact.html">Contact</a>
+      <button class="toggle-theme" onclick="toggleTheme()"><i class="ri-moon-line"></i></button>
     </nav>
   </header>
 
-  <section class="hero">
-    <h1>Cybersecurity Specialist | Protecting Digital Assets</h1>
-    <p>Experienced cybersecurity professional specializing in threat analysis, penetration testing, and secure system design.</p>
-    <div class="hero-icons">
-      <i class="ri-lock-line"></i>
-      <i class="ri-bug-line"></i>
-      <i class="ri-shield-user-line"></i>
-    </div>
-    <div class="buttons">
-      <button onclick="window.location.href='portfolio.html'">View My Work</button>
-      <button onclick="window.location.href='about.html'">Learn More</button>
-    </div>
+  <section>
+    <h1>About Me</h1>
+    <p>I'm Ramon Tapia, the creator behind CyberTapSecurity — a cybersecurity professional, U.S. military veteran, and ethical hacking enthusiast. With a background in intelligence and tactical operations, I combine real-world experience with red/purple team techniques to help secure and educate others in the digital space.</p>
+
+    <p>I’m passionate about creating tools, platforms, and educational content that empower others to understand cyber threats and build resilient systems. Whether it’s penetration testing, building secure infrastructure, or guiding clients through technical risks — CyberTapSecurity stands for trust, integrity, and precision.</p>
+
+    <p>Currently pursuing my bachelor's in cybersecurity while leading technical initiatives in the academic space, I strive to bridge the gap between offense and defense — because true security is proactive, not reactive.</p>
   </section>
 
   <footer>
     <p>© 2025 Ramon Tapia | bigtapcybersecurity@bigtapsecurity.com</p>
   </footer>
+
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      if (html.getAttribute('data-theme') === 'dark') {
+        html.setAttribute('data-theme', 'light');
+      } else {
+        html.setAttribute('data-theme', 'dark');
+      }
+    }
+  </script>
 </body>
 </html>
