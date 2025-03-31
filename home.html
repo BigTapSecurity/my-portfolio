@@ -1,17 +1,31 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Home | BigTapSecurity</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CyberTapSecurity | Home</title>
+
+  <!-- Security Headers -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline';">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="X-Frame-Options" content="DENY">
+  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+
+  <!-- SEO & Branding -->
+  <meta name="description" content="CyberTapSecurity - Your Trusted Cybersecurity Partner">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+  <!-- Fonts & Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
   <style>
     body {
       margin: 0;
       background: linear-gradient(to bottom right, #000000, #012b19);
       color: #00ffcc;
       font-family: 'Poppins', sans-serif;
+      transition: background 0.3s ease, color 0.3s ease;
     }
     header {
       display: flex;
@@ -20,6 +34,14 @@
       padding: 1rem 2rem;
       background-color: #111;
       border-bottom: 1px solid #00ffcc;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: bold;
+      color: #00ffcc;
+      font-size: 1.5rem;
     }
     nav a {
       color: #00ffcc;
@@ -62,6 +84,13 @@
     .buttons button:hover {
       background: #00ddb2;
     }
+    .toggle-theme {
+      cursor: pointer;
+      background: none;
+      border: none;
+      font-size: 1.2rem;
+      color: #00ffcc;
+    }
     footer {
       text-align: center;
       padding: 1rem;
@@ -72,31 +101,49 @@
 </head>
 <body>
   <header>
-    <h2>BigTapSecurity</h2>
+    <div class="logo">
+      <i class="ri-shield-line"></i> CyberTapSecurity
+    </div>
     <nav>
       <a href="home.html">Home</a>
-      <a href="portfolio.html">Portfolio</a>
       <a href="about.html">About</a>
+      <a href="portfolio.html">Services</a>
       <a href="contact.html">Contact</a>
+      <button class="toggle-theme" onclick="toggleTheme()"><i class="ri-moon-line"></i></button>
     </nav>
   </header>
 
   <section class="hero">
-    <h1>Cybersecurity Specialist | Protecting Digital Assets</h1>
-    <p>Experienced cybersecurity professional specializing in threat analysis, penetration testing, and secure system design.</p>
+    <h1>Your Trusted Cybersecurity Partner</h1>
+    <p>Defending your digital space through offensive insight, ethical practices, and expert protection.</p>
     <div class="hero-icons">
       <i class="ri-lock-line"></i>
       <i class="ri-bug-line"></i>
       <i class="ri-shield-user-line"></i>
     </div>
     <div class="buttons">
-      <button onclick="window.location.href='portfolio.html'">View My Work</button>
-      <button onclick="window.location.href='about.html'">Learn More</button>
+      <button onclick="window.location.href='portfolio.html'">Our Services</button>
+      <button onclick="window.location.href='about.html'">About Us</button>
     </div>
   </section>
 
   <footer>
     <p>© 2025 Ramon Tapia | bigtapcybersecurity@bigtapsecurity.com</p>
   </footer>
+
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      if (html.getAttribute('data-theme') === 'dark') {
+        html.setAttribute('data-theme', 'light');
+        document.body.style.background = '#f5f5f5';
+        document.body.style.color = '#222';
+      } else {
+        html.setAttribute('data-theme', 'dark');
+        document.body.style.background = 'linear-gradient(to bottom right, #000000, #012b19)';
+        document.body.style.color = '#00ffcc';
+      }
+    }
+  </script>
 </body>
 </html>
