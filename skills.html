@@ -4,14 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CyberTapSecurity | Skills</title>
-
-  <!-- Security Headers -->
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline';">
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
   <meta http-equiv="X-Frame-Options" content="DENY">
   <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
-
-  <!-- SEO & Branding -->
   <meta name="description" content="Skills and technical expertise of CyberTapSecurity">
   <link rel="icon" href="favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css">
@@ -69,11 +65,7 @@
   <script>
     function toggleTheme() {
       const html = document.documentElement;
-      if (html.getAttribute('data-theme') === 'dark') {
-        html.setAttribute('data-theme', 'light');
-      } else {
-        html.setAttribute('data-theme', 'dark');
-      }
+      html.setAttribute('data-theme', html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
     }
   </script>
 </body>

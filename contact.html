@@ -4,63 +4,33 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CyberTapSecurity | Contact</title>
-
-  <!-- Security Headers -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline';">
-  <meta http-equiv="X-Content-Type-Options" content="nosniff">
-  <meta http-equiv="X-Frame-Options" content="DENY">
-  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
-
-  <!-- SEO & Branding -->
-  <meta name="description" content="Contact CyberTapSecurity for cybersecurity support or consulting">
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <meta name="description" content="Contact CyberTapSecurity for cybersecurity support or consulting.">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <header>
-    <div class="logo">
-      <i class="ri-shield-line"></i> CyberTapSecurity
-    </div>
+    <div class="logo">CyberTapSecurity</div>
     <nav>
       <a href="home.html">Home</a>
       <a href="about.html">About</a>
       <a href="portfolio.html">Services</a>
       <a href="contact.html">Contact</a>
-      <button class="toggle-theme" onclick="toggleTheme()"><i class="ri-moon-line"></i></button>
     </nav>
   </header>
 
   <section>
-    <h1>Contact Me</h1>
+    <h1>Contact Us</h1>
     <p>Need help or want to collaborate? Send a secure message below.</p>
-
-    <form method="POST" action="https://your-api-gateway-url.amazonaws.com/contact" style="max-width: 600px; margin: auto;">
-      <input type="text" name="name" placeholder="Your Name" required style="width: 100%; padding: 10px; margin: 10px 0;">
-      <input type="email" name="email" placeholder="Your Email" required style="width: 100%; padding: 10px; margin: 10px 0;">
-      <textarea name="message" rows="6" placeholder="Your Message" required style="width: 100%; padding: 10px; margin: 10px 0;"></textarea>
-
-      <!-- Honeypot anti-spam field (hidden from users) -->
-      <input type="text" name="_gotcha" style="display:none">
-
+    <form method="POST" action="#">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
       <button type="submit">Send Message</button>
     </form>
   </section>
 
   <footer>
-    <p>© 2025 Ramon Tapia | bigtapcybersecurity@bigtapsecurity.com</p>
+    <p>© 2025 CyberTapSecurity | contact@cybertapsecurity.com</p>
   </footer>
-
-  <script>
-    function toggleTheme() {
-      const html = document.documentElement;
-      if (html.getAttribute('data-theme') === 'dark') {
-        html.setAttribute('data-theme', 'light');
-      } else {
-        html.setAttribute('data-theme', 'dark');
-      }
-    }
-  </script>
 </body>
 </html>
